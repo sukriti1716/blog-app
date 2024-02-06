@@ -1,0 +1,23 @@
+<%-include('../partials/header')%>
+<%-include('../partials/navbar')%>
+
+<div class="Container3">
+    <div class="Img">
+        <img src="<%=blog.img%>" alt="">
+    </div>
+    <div class="details">
+        <p class="title"><span>Title:</span> <%=blog.title%></p>
+        <p class="desc new-desc"> <%=blog.desc%></p>
+        <p class="author"><span>Author:</span> <%=blog.author%></p>
+        <p class="views"><span>Views:</span> <%=blog.views%></p>  
+        <div class="option">
+            <a href="/reviews/new" class="btn btn-sm btn-primary">Add Comment</a>
+            <a href="/blogs/<%=blog.id%>/edit" class="btn btn-sm btn-secondary">Edit</a>
+            <form class="d-inline" action="/blogs/<%=blog.id%>?_method=DELETE" method="post">
+                <button class="btn btn-sm btn-danger">Delete</button>
+             </form>
+        </div>         
+    </div>
+</div>
+
+<%-include('../partials/footer')%>

@@ -1,0 +1,22 @@
+<%-include('../partials/header')%>
+<%-include('../partials/navbar')%>
+
+<div class="container2">
+    <%blogs.forEach(blog=>{%>
+        <div class="mainblog">
+            <div class="image">
+                <img src="<%=blog.img%>" alt="">
+            </div>
+            <div class="Content">
+                <p class="title"><%=blog.title%></p>
+                <p class="desc"><span>Description:</span> <%=blog.desc.substring(0,90)%>...</p>
+                <p class="author"><span>Author:</span> <%=blog.author%></p>
+                <p class="views"><span>Views:</span> <%=blog.views%></p>
+                <a class="show" href="/blogs/<%=blog.id%>">Read More</a>
+            </div>
+        </div>
+
+    <%})%>
+</div>
+
+<%-include('../partials/footer')%>

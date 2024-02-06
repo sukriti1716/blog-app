@@ -1,0 +1,36 @@
+<%-include('../partials/header')%>
+<%-include('../partials/navbar')%>
+
+<div class="container">
+    <form action="/reviews/new" method="post">
+        <div>
+            <label for="name">Name</label><br>
+            <input type="text" id="name" name="name" placeholder="Enter Name">
+        </div>
+        <div>
+            <label for="title">Title of blog</label><br>
+            <input type="text" id="title" name="title" placeholder="Enter Title">
+        </div>
+        <div>
+            <label for="author">Author Name</label><br>
+            <input type="text" id="author" name="author" placeholder="Enter Author Name">
+        </div>
+        <div>
+            <label for="rating">Rating</label><br>
+            <input type="text" id="rating" name="rating" placeholder="Enter Rating">
+        </div>
+       
+        <div>
+            <label for="recommended">Recommend Or Not</label>
+            <input type="checkbox" id="recommended" name="recommended" value="true">
+        </div>
+        <div>
+            <label for="desc">Enter Comments</label><br>
+            <textarea name="desc" id="desc" cols="30" rows="10"></textarea>
+        </div>
+
+        <button class="btn-primary" type="submit">Submit</button>
+    </form>
+</div>
+
+<%-include('../partials/footer')%>

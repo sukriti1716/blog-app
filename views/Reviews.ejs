@@ -1,0 +1,32 @@
+<%-include('../partials/header')%>
+<%-include('../partials/navbar')%>
+
+
+
+<div class="container2">
+    <a class="add-comment" href="/reviews/new">Add New Comment</a>
+    <%reviews.forEach(review=>{%>
+        <div class="mainblog review">
+            <div class="Content">
+                <p class="title"><span>Title of blog:</span> <%=review.title%></p>
+                <p class="author"><span>Author:</span> <%=review.author%></p>
+                <p class="desc"><span>Comments:</span> <%=review.desc%></p>
+                <p class="rating"><span>Rating:</span> <%=review.rating%></p>
+                <p class="recommended"><span>Recommended:</span> <%=review.recommended%></p>
+                <div id="options">
+                    <p class="author"><span>User:</span> <%=review.name%></p>
+                    <div class="ed">
+                        <a class="btn btn-sm btn-primary" href="/reviews/blog/<%=review.author%>">Open Blog </a>
+                        <a class="btn btn-sm btn-secondary" href="/reviews/<%=review.id%>/edit">Edit </a>
+                        <form class="d-inline" action="/reviews/<%=review.id%>?_method=DELETE" method="post">
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <%})%>
+</div>
+
+<%-include('../partials/footer')%>

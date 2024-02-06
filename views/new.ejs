@@ -1,0 +1,31 @@
+<%-include('../partials/header')%>
+<%-include('../partials/navbar')%>
+
+<div class="container">
+    <form action="/blogs" method="post">
+        <div>
+            <label for="title">Title</label><br>
+            <input type="text" id="title" name="title" placeholder="Enter Title">
+        </div>
+        <div>
+            <label for="img">Image</label><br>
+            <input type="text" id="img" name="img" placeholder="Enter Image">
+        </div>
+        <div>
+            <label for="author">Author</label><br>
+            <input type="text" id="author" name="author" placeholder="Enter Author">
+        </div>
+        <div>
+            <label for="views">Views</label><br>
+            <input type="text" id="views" name="views" placeholder="Enter Views">
+        </div>
+        <div>
+            <label for="desc">Description</label><br>
+            <textarea name="desc" id="desc" cols="30" rows="10"></textarea>
+        </div>
+
+        <button class="btn-primary" type="submit">Add</button>
+    </form>
+</div>
+
+<%-include('../partials/footer')%>
