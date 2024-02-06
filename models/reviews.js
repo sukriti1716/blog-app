@@ -1,6 +1,7 @@
 const mongoose=require('mongoose')
 
-mongoose.connect(process.env.MONGO_URL)
+const password=encodeURIComponent('Sukritb#123456')
+mongoose.connect(`mongodb+srv://blogs:${password}@cluster0.q6updbe.mongodb.net/?retryWrites=true&w=majority`)
     .then(()=>{
         console.log('db connected')
     })

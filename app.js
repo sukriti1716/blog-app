@@ -15,7 +15,8 @@ app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 
 
-mongoose.connect(process.env.MONGO_URL)
+const password=encodeURIComponent('Sukritb#123456')
+mongoose.connect(`mongodb+srv://blogs:${password}@cluster0.q6updbe.mongodb.net/?retryWrites=true&w=majority`)
     .then(()=>{
         console.log('db connected')
     })
@@ -154,7 +155,7 @@ app.delete('/blogs/:id',async (req,res)=>{
     res.redirect('/blogs')
 })
 
-const PORT=process.env.PORT || 6600
+const PORT=process.env.PORT || 80
 app.listen(PORT,()=>{
     console.log('server is up at ',PORT)
 })
